@@ -1,0 +1,30 @@
+# dictionary: xqzm_custom dict schema
+# encoding: utf-8
+# vim: noet:ts=8:sw=8:sts=8:fenc=utf8:ft=yaml
+# generated at 2021-08-16 10:06:18.881006 by 小泉
+#
+# [ Description ]
+# 小泉郑码自定义码表
+
+---
+name: xqzm_custom
+version: "0.6.2"
+sort: weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+  - weight
+  - stem
+encoder:
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaBbCa"
+    - length_in_range: [4, 10]
+      formula: "AaBaCaDa"
+
+...
+
+
