@@ -30,9 +30,6 @@ switches:
   - name: s2t
     states: [常规, 繁体]
     reset: 0
-  - name: emoji_suggestion
-    states: [〇, 😊]
-    reset: 1
   - name: pinyin_tip
     states: ["拼", "pīn"]
     reset: 0
@@ -72,7 +69,6 @@ engine:
     - charset_filter@gbk
     - charset_filter@big5
     - simplifier@pinyin_tip
-    - simplifier@emoji_suggestion
     - reverse_lookup_filter@zhengma_lookup
     - simplifier@xqzm_spelling
     - uniquifier
@@ -114,11 +110,6 @@ simplifier:
   opencc_config: s2hk.json
   option_name: s2t
   tags: [abc]
-  tips: all
-
-emoji_suggestion:
-  opencc_config: emoji.json
-  option_name: emoji_suggestion
   tips: all
 
 pinyin_tip:
@@ -182,7 +173,6 @@ key_binder:
     - {when: has_menu, accept: semicolon, send: 2}
     - {when: has_menu, accept: apostrophe, send: 3}
     - {when: has_menu, accept: period, send: period}
-    - {when: always, accept: Control+Shift+E, toggle: emoji_suggestion}
     - {when: always, accept: Control+Shift+F, toggle: s2t}
     - {when: always, accept: Control+Shift+P, toggle: pinyin_tip}
     - {when: always, accept: Control+Shift+S, toggle: xqzm_spelling}
