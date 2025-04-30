@@ -47,3 +47,8 @@ function datetime_translator(input, seg)
         yield(Candidate("week", seg.start, seg._end, os.date("%W"), "第~周"))
     end
 end
+
+-- select_character_processor: 以词定字
+-- 输入词组，按 [ 选择第一个字，按 ] 选择第二个字。
+-- 详见 `lua/select_character.lua`
+select_character = require("select_character")

@@ -3,7 +3,7 @@
 
 schema:
   schema_id: double_pinyin_flypy
-  name: 小鶴雙拼
+  name: 双拼小鹤
   version: "0.18"
   author:
     - double pinyin layout by 鶴
@@ -28,6 +28,7 @@ engine:
     - recognizer
     - key_binder
     - speller
+    - lua_processor@select_character
     - punctuator
     - selector
     - navigator
@@ -85,6 +86,8 @@ speller:
 translator:
   dictionary: pinyin_xq
   prism: double_pinyin_flypy
+  enable_user_dict: false
+  encode_commit_history: false
   preedit_format:
     - xform/([bpmfdtnljqx])n/$1iao/
     - xform/(\w)g/$1eng/
@@ -124,6 +127,11 @@ punctuator:
 
 key_binder:
   import_preset: default
+  bindings:
+    - {when: has_menu, accept: semicolon, send: 2}
+    - {when: has_menu, accept: apostrophe, send: 3}
+    - {when: has_menu, accept: period, send: period}
+    - {when: has_menu, accept: Tab, send: Down}
 
 recognizer:
   import_preset: default
