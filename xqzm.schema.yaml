@@ -149,6 +149,7 @@ gb2312:
 reverse_lookup:
   closing_tips: "〔郑码〕"
   dictionary: polar_py
+  prism: double_pinyin_flypy
   prefix: "`"
   # suffix: ";"
   tips: 〔拼音反查〕
