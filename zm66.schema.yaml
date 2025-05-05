@@ -1,0 +1,131 @@
+# Rime schema
+# encoding: utf-8
+# zm66.schema.yaml
+
+schema:
+  schema_id: zm66
+  name: 郑码6.6
+  version: "1.0"
+  author:
+    - 郑易里老先生
+  description: |
+    Rime 郑码6.6输入方案
+    输入 ` 进入拼音反查，依赖 polar_py 方案
+  dependencies:
+    - polar_py
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: extended_charset
+    reset: 0
+    states: [ 通用, 增广 ]
+  - name: s2t
+    states: [简, 繁]
+    reset: 0
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+  - name: xqzm_spelling
+    states: ["拆", "扌斥"]
+    reset: 0
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+    - reverse_lookup_translator
+    - lua_translator@datetime_translator
+  filters:
+    - simplifier
+    - simplifier@xqzm_spelling
+    - uniquifier
+
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  max_code_length: 4
+  auto_select: false
+  auto_clear: max_length
+  auto_select_unique_candidate: true
+
+
+translator:
+  dictionary: zm66
+  enable_charset_filter: true  #字符集过滤
+  enable_sentence: false       #是否整句连打
+  enable_encoder: false
+  encode_commit_history: false
+  max_phrase_length: 10
+  enable_user_dict: false
+
+simplifier:
+  opencc_config: s2hk.json
+  option_name: s2t
+  tags: [abc]
+  tips: all
+
+xqzm_spelling:
+  opencc_config: xqzm_spelling.json
+  option_name: xqzm_spelling
+  show_in_comment: true
+  comment_format:
+    - "xform@_@ @"
+  tags:
+    - abc
+    - reverse_lookup
+  tips: char
+
+
+punctuator:
+  import_preset: symbols
+
+key_binder:
+  import_preset: default
+  bindings:
+    #- {when: composing, accept: Return, send: Escape}#以回車鍵清除編碼
+    - {when: has_menu, accept: semicolon, send: 2}   #以分號、單引號選字
+    - {when: has_menu, accept: apostrophe, send: 3}
+    - {accept: period, send: period, when: has_menu}  #句号顶屏
+    - {when: has_menu, accept: space, send: space}
+    - {when: composing, accept: space, send: Escape}
+    - {when: always, accept: Control+Shift+F, toggle: s2t}
+    - {when: always, accept: Control+Shift+S, toggle: xqzm_spelling}
+
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "^`[a-z]*$"
+    punct: "^/([a-z]+|[0-9]0?)$"
+
+reverse_lookup:
+  closing_tips: "〔郑码〕"
+  dictionary: polar_py
+  prism: double_pinyin_flypy
+  prefix: "`"
+  # suffix: ";"
+  tips: 〔双拼反查〕
+  initial_quality: 1
+  preedit_format:
+    - "xform/([nl])v/$1ü/"
+    - "xform/([nl])ue/$1üe/"
+    - "xform/([jqxy])v/$1u/"
