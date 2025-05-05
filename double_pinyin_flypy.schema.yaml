@@ -8,8 +8,9 @@ schema:
   author:
     - double pinyin layout by 鶴
     - Rime schema by 佛振 <chen.sst@gmail.com>
+    - hosxy 极光拼音词库
   description: |
-    小泉拼音＋小鶴雙拼方案。
+    极光拼音＋小鹤双拼方案。极光拼音输入方案改名为 polar_py ，输入起来更简单。
 
 switches:
   - name: ascii_mode
@@ -21,6 +22,9 @@ switches:
     states: [ 漢字, 汉字 ]
   - name: ascii_punct
     states: [ 。，, ．， ]
+  - options: ["gb2312","gbk","utf8"]                # 字符集
+    reset: 1                                        # 默认为 GBK 字符集(常用字)
+    states: [GB2312, 常用字(GBK), 生僻字(UTF-8)]
 
 engine:
   processors:
@@ -46,6 +50,9 @@ engine:
   filters:
     - simplifier
     - uniquifier
+    - charset_filter@gb2312
+    - charset_filter@gbk
+
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
@@ -84,7 +91,7 @@ speller:
     #- abbrev/^(.).+$/$1/
 
 translator:
-  dictionary: pinyin_xq
+  dictionary: polar_py
   prism: double_pinyin_flypy
   enable_user_dict: false
   encode_commit_history: false

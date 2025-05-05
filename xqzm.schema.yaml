@@ -15,9 +15,9 @@ schema:
     - "xq / 风入松"
   description: |
     小泉全郑，超大字集，超大词库，超多符号表情，带九万多单字声调拼音，七万多词组拼音，带有 cjk 字集拆分
-    输入 ` 进入拼音反查，依赖 pinyin_xq 方案
+    输入 ` 进入拼音反查，依赖 polar_py 方案
   dependencies:
-    - pinyin_xq
+    - polar_py
 
 switches:
   - name: ascii_mode
@@ -27,8 +27,9 @@ switches:
     states: ["半角", "全角"]
   - name: gbk
     states: [UTF8, GBK]
+    reset: 1
   - name: s2t
-    states: [常规, 繁体]
+    states: [简, 繁]
     reset: 0
   - name: pinyin_tip
     states: ["拼", "pīn"]
@@ -78,7 +79,7 @@ speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba
   delimiter: " '"
   max_code_length: 4
-  auto_select: false    # 顶字上屏
+  auto_select: false
   auto_clear: max_length
   auto_select_unique_candidate: true
 
@@ -147,7 +148,7 @@ gb2312:
 
 reverse_lookup:
   closing_tips: "〔郑码〕"
-  dictionary: pinyin_xq
+  dictionary: polar_py
   prefix: "`"
   # suffix: ";"
   tips: 〔拼音反查〕

@@ -13,10 +13,10 @@ schema:
   author:
     - "xq / 风入松"
   description:
-    敲 ` 键进入拼音反查，依赖 pinyin_xq 方案
+    敲 ` 键进入拼音反查，依赖 polar_py 方案
     小泉简郑，只包含 gb2312 字集。有二三简的，去掉三简。
   dependencies:
-    - pinyin_xq
+    - polar_py
 
 switches:
   - name: ascii_mode
@@ -85,7 +85,7 @@ simplifier:
   tips: all
 
 reverse_lookup:
-  dictionary: pinyin_xq
+  dictionary: polar_py
   prefix: "`"
   tips: 〔拼音〕
   preedit_format:
