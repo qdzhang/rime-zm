@@ -152,7 +152,7 @@ reverse_lookup:
   prism: double_pinyin_flypy
   prefix: "`"
   # suffix: ";"
-  tips: 〔拼音反查〕
+  tips: 〔小泉郑码反查〕
   initial_quality: 1
   preedit_format:
     - "xform/([nl])v/$1ü/"

@@ -109,6 +109,7 @@ key_binder:
     - {when: composing, accept: space, send: Escape}
     - {when: always, accept: Control+Shift+F, toggle: s2t}
     - {when: always, accept: Control+Shift+S, toggle: xqzm_spelling}
+    - {when: always, accept: Control+Shift+U, toggle: extended_charset}
 
 
 recognizer:
@@ -123,7 +124,7 @@ reverse_lookup:
   prism: double_pinyin_flypy
   prefix: "`"
   # suffix: ";"
-  tips: 〔双拼反查〕
+  tips: 〔郑码6.6反查〕
   initial_quality: 1
   preedit_format:
     - "xform/([nl])v/$1ü/"

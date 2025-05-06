@@ -88,7 +88,7 @@ reverse_lookup:
   dictionary: polar_py
   prism: double_pinyin_flypy
   prefix: "`"
-  tips: 〔拼音〕
+  tips: 〔简郑反查〕
   preedit_format:
     - "xform/([nl])v/$1ü/"
     - "xform/([nl])ue/$1üe/"
@@ -107,7 +107,6 @@ key_binder:
   bindings:
     - {when: has_menu, accept: semicolon, send: 2}
     - {when: has_menu, accept: apostrophe, send: 3}
-    - {when: always, accept: Release+Escape, toggle: ascii_mode}
     - {when: paging, accept: comma, send: Page_Up}
     - {when: has_menu, accept: period, send: Page_Down}
 
