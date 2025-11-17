@@ -28,7 +28,7 @@ switches:
     reset: 0
   - name: ascii_punct
     states: [ 。，, ．， ]
-  - name: xqzm_spelling
+  - name: zm_spelling
     states: ["拆", "扌斥"]
     reset: 0
 
@@ -55,7 +55,7 @@ engine:
     - lua_translator@datetime_translator
   filters:
     - simplifier
-    - simplifier@xqzm_spelling
+    - simplifier@zm_spelling
     - uniquifier
 
 
@@ -83,9 +83,9 @@ simplifier:
   tags: [abc]
   tips: all
 
-xqzm_spelling:
-  opencc_config: xqzm_spelling.json
-  option_name: xqzm_spelling
+zm_spelling:
+  opencc_config: zm_spelling.json
+  option_name: zm_spelling
   show_in_comment: true
   comment_format:
     - "xform@_@ @"
@@ -108,7 +108,7 @@ key_binder:
     - {when: has_menu, accept: space, send: space}
     - {when: composing, accept: space, send: Escape}
     - {when: always, accept: Control+Shift+F, toggle: s2t}
-    - {when: always, accept: Control+Shift+S, toggle: xqzm_spelling}
+    - {when: always, accept: Control+Shift+S, toggle: zm_spelling}
     - {when: always, accept: Control+Shift+U, toggle: extended_charset}
 
 
