@@ -6,7 +6,11 @@
 
 #+BEGIN_HTML
 <details>
+#+END_HTML
+
+#+BEGIN_HTML
 <summary>点击查看详细列表</summary>
+#+END_HTML
 
 - 双 xsx （原先 xsx 为空码）
 - 牧 mbm （原先 mbm 只有“箸”，增加“牧”作为三简）
@@ -28,8 +32,8 @@
 - 變zsmo （原为 zsrs ）
 - 圕 jdxk （原为 jdbk ）
 
+#+BEGIN_HTML
 </details>
-
 #+END_HTML
 
 
