@@ -3,6 +3,5 @@
 patch:
   schema_list:
     - schema: zm66
-    - schema: xqzm
     - schema: double_pinyin_flypy
-    - schema: xqjz
+    - schema: polar_py
