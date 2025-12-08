@@ -25,5 +25,17 @@
 - =Ctrl+Shift+f=: 打开“打简出繁”/关闭“打简出繁”。（默认为关闭）
 
 ** 极光拼音
-词条有限但好用的拼音词库，搭固定词频的小鹤双拼，作为郑码的反查方案。
-https://github.com/hosxy/rime-aurora-pinyin
+地址：https://github.com/hosxy/rime-aurora-pinyin
+
+词条有限但好用的拼音词库，搭固定词频的小鹤双拼，作为郑码的反查方案。如果想要用全
+拼进行反查，把 ~zm66.schema.yaml~ 中的 =reverse_lookup:= 作如下更改：
+
+#+begin_src diff
+reverse_lookup:
+  closing_tips: "〔郑码〕"
+  dictionary: polar_py
+- prism: double_pinyin_flypy
++ prism: polar_py
+#+end_src
+
+这样使用 polar_py 全拼方案（或者改成其它的拼音方案）进行反查。
