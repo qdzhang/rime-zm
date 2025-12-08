@@ -3,6 +3,11 @@
 
 ** 郑码6.6
 基本上是原版郑码 6.6 的编码，在其基础上更改了以下内容：
+
+#+BEGIN_HTML
+<details>
+<summary>点击查看详细列表</summary>
+
 - 双 xsx （原先 xsx 为空码）
 - 牧 mbm （原先 mbm 只有“箸”，增加“牧”作为三简）
 - 赴 bid （原先 bid 为“圤”，不常用，故增加“赴”作为三简）
@@ -18,6 +23,14 @@
 - 兖 sozr （重码下优先出单字）
 - 吕 jjv （原先 jjv 是“串”，是一个容错码，但“串”已经有 jji 三码的全码，故 jjv 让给“吕”）
 - 刁 yavv （与“卫”在 yavv 上重码，但“卫”已经有 yav 三码了，故 yavv 首选让给“刁”）
+- 粵njaz （原为 nlbz ）
+- 叏xixs （原为 xxs ）
+- 變zsmo （原为 zsrs ）
+- 圕 jdxk （原为 jdbk ）
+
+</details>
+#+END_HTML
+
 
 *** 快捷键
 - =Ctrl+Shift+s=: 打开“拆字”/关闭“拆字”。（默认不拆字）

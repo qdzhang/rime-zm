@@ -22330,7 +22330,6 @@ encoder:
 圇	jdal	jo
 圚	jdal	jj
 爴	jdap	jh
-圕	jdbk	jx
 囲	jdbn	jb
 园	jdbr	jb
 圉	jdbu	jb
@@ -22430,6 +22429,7 @@ encoder:
 恩	jdwz	jw
 囙	jdx	jx
 圄	jdxj	jb
+圕	jdxk	jx
 因子	jdya
 囝	jdya	jy
 囻	jdyh	jy
@@ -33978,6 +33978,7 @@ encoder:
 信口开河	njav
 顺口溜	njav
 粤	njaz	nu
+粵	njaz	np
 堡	njb	nj
 向来	njbk
 魅	njbk	nb
@@ -34372,7 +34373,6 @@ encoder:
 倜	nlbj	nl
 自贡	nlbl
 自动	nlbz
-粵	nlbz	np
 伹	nlc	nl
 侧耳	nlce
 自理	nlck
@@ -59352,6 +59352,7 @@ encoder:
 疏通	xiwx
 骑虎难下	xixa
 皮层	xixb
+叏	xixs	xx
 疏导	xiyd
 疏	xizn	xi
 君	xj
@@ -60311,7 +60312,6 @@ encoder:
 双解	xxrl
 预留	xxrs
 驭	xxs	xx
-叏	xxs	xx
 预订	xxsa
 预言	xxsa
 双语	xxsb
@@ -64367,6 +64367,7 @@ encoder:
 攣	zsmd	zm
 统制	zsml
 妇产科	zsmm
+變	zsmo	zm
 如意算盘	zsmp
 统称	zsmr
 欸	zsmr	zm
@@ -64406,7 +64407,6 @@ encoder:
 纃	zsrn	zs
 能	zsrr	zq
 鵕	zsrr	zo
-變	zsrs	zr
 熊	zsru	zq
 熋	zsru	zq
 態	zsrw	zq
