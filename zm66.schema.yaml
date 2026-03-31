@@ -31,6 +31,9 @@ switches:
   - name: zm_spelling
     states: ["拆", "扌斥"]
     reset: 0
+  - name: single_char_only
+    reset: 0
+    states: [词组, 单字]
 
 engine:
   processors:
@@ -56,6 +59,7 @@ engine:
   filters:
     - simplifier
     - simplifier@zm_spelling
+    - lua_filter@single_char_only
     - uniquifier
 
 
@@ -94,6 +98,8 @@ zm_spelling:
     - reverse_lookup
   tips: char
 
+single_char_only:
+  tags: [abc]
 
 punctuator:
   import_preset: symbols
@@ -110,6 +116,7 @@ key_binder:
     - {when: always, accept: Control+Shift+F, toggle: s2t}
     - {when: always, accept: Control+Shift+S, toggle: zm_spelling}
     - {when: always, accept: Control+Shift+U, toggle: extended_charset}
+    - {when: always, accept: Control+Shift+D, toggle: single_char_only}
 
 
 recognizer:

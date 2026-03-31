@@ -52,3 +52,7 @@ end
 -- 输入词组，按 [ 选择第一个字，按 ] 选择第二个字。
 -- 详见 `lua/select_character.lua`
 select_character = require("select_character")
+
+-- 过滤词组，只输入单字
+-- 详见 `lua/single_char_only.lua`
+single_char_only = require("single_char_only")

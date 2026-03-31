@@ -42,6 +42,14 @@
 - =Ctrl+Shift+s=: 打开“拆字”/关闭“拆字”。（默认不拆字）
 - =Ctrl+Shift+u=: 打开“拓展字符集”/“通用字符集”。（默认为通用字符集）
 - =Ctrl+Shift+f=: 打开“打简出繁”/关闭“打简出繁”。（默认为关闭）
+- =Ctrl+Shift+D=: 切换“词组”模式或“单字”模式。（默认为“词组”）
+  单字模式下配合下面的设置可以获得更流畅（顶字上屏）的输入体验：
+  #+begin_src yaml
+  max_code_length: 0 # 关闭 4 码定长
+  auto_select: true # 自动上屏
+  auto_clear: max_length
+  auto_select_unique_candidate: true
+  #+end_src
 
 ** 极光拼音
 地址：https://github.com/hosxy/rime-aurora-pinyin
