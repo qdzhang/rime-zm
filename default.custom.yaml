@@ -5,3 +5,6 @@ patch:
     - schema: zm66
     - schema: double_pinyin_flypy
     - schema: polar_py
+  key_binder/bindings:
+    # 避免与 Windows Emacs 中的按键冲突
+    - {accept: "Control+Space", send: ascii_mode, when: always}
