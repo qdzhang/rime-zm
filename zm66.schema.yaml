@@ -107,7 +107,15 @@ punctuator:
 key_binder:
   import_preset: default
   bindings:
-    #- {when: composing, accept: Return, send: Escape}#以回車鍵清除編碼
+    # 避免与 Windows Emacs 中的按键冲突
+    - {accept: "Control+Space", send: ascii_mode, when: always}
+    # +/- 翻页
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    # [/] 翻页
+    - {accept: bracketleft, send: Page_Up, when: has_menu}
+    - {accept: bracketright, send: Page_Down, when: has_menu}
+    # - {when: composing, accept: Return, send: Escape} #以回車鍵清除編碼
     - {when: has_menu, accept: semicolon, send: 2}   #以分號、單引號選字
     - {when: has_menu, accept: apostrophe, send: 3}
     - {accept: period, send: period, when: has_menu}  #句号顶屏
